@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee+Tint&display=swap');
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5cfb6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Styles for the Navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;
+  top: 20px;
+  width: calc(100% - 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.navbar-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #ff1e00;
+  text-shadow: 2px 2px #000;
+  margin: 0;
+  font-family: "Alfa Slab One", serif;
+
+  font-weight: 400;
+  font-style: normal;
+  transition: ease 0.5s;
+  cursor:context-menu;
+}
+
+.navbar-title:hover{
+  color: white;  
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff6347;
+}
+
+.navbar button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
+  border-radius: 4px;
+}
+
+.navbar button:hover {
+  background-color: #ff4500;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.create-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  width: 400px;
+}
+.create-recipe form {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 400px;
+}
+
+p {
+  max-width: 400px;
+  font-size: 12px;
+}
+
+/* General Styling */
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Recipe List Styling */
+.recipes-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipe-list-item {
+  background-color: #fcffcd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 36px rgb(0, 0, 0);
+}
+
+
+.recipe-name,.recipe-ingredients-title,.recipe-instructions-title {
+  font-size: 1.5rem;
+  color: #a05353;
+  margin: 15px 0;
+}
+
+.save-star {
+  font-size: 1.5rem;
+  color: #ffe600;
+  margin-left: 10px;
+}
+
+.save-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #e64a19;
+}
+
+.recipe-ingredients{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.recipe-ingredients-item{
+  padding: 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+.recipe-instructions {
+  padding: 5px;
+  font-size: 1rem;
+  color: #3a3636;
+  border-top: 1px solid #e0e0e0;
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.recipe-cook-time {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6b0303b6;
+  padding: 10px 15px;
+  text-align: right;
+  background-color: #fdcf99;
+}
+
+/* Container for the entire Auth component */
+.auth {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 30px;
+  gap:40px
+}
+
+/* Container for each form (Login/Register) */
+.auth-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  flex: 1;
+}
+
+/* Form Element */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Form Title */
+.auth-title {
+  font-size: 29px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Labels */
+.username-input-label,
+.password-input-label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #555;
+  display: block;
+}
+
+/* Input Fields */
+.username-input,
+.password-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.username-input:focus,
+.password-input:focus {
+  border-color: #ff5722;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+}
+
+/* Submit Button */
+.form-submit-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit-button:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .auth {
+    flex-direction: column;
+  }
+
+  .auth-container {
+    margin-bottom: 20px;
+  }
+}
+
+
+.create-recipe {
+  background-color: #f4f4f9;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.create-recipe-title {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.add-recipe-form label {
+  display: block;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.name-input, 
+.ingredient-item, 
+.instructions-input, 
+.image-link-input, 
+.cook-time-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+}
+
+.instructions-input {
+  height: 100px;
+  resize: none;
+}
+
+.add-ingredient-button, 
+.add-recipe-button {
+  background-color: #ff6347;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.add-ingredient-button:hover, 
+.add-recipe-button:hover {
+  background-color: #ff4500;
+}
+
+.add-recipe-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-recipe-form input:focus, 
+.add-recipe-form textarea:focus {
+  border-color: #ff6347;
+  outline: none;
+}
+
+.add-recipe-form .ingredient-item {
+  margin-bottom: 10px;
+}
+
+.add-recipe-card {
+  display:inline;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-recipe-card:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.05);
+  cursor: crosshair;
+}
+
+.add-recipe-content {
+  text-align: center;
+}
+
+.add-recipe-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.add-recipe-text {
+  font-size: 14px;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.add-recipe-icon {
+  font-size: 24px;
+  color: #00796b;
+}
