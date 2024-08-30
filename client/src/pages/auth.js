@@ -28,7 +28,7 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://bite-wcsg.onrender.com/auth/login', { username, password });
+      const response = await axios.post('http://localhost:3001/auth/login', { username, password });
 
       setCookies('access_token', response.data.token);
       window.localStorage.setItem('userID', response.data.userID);
@@ -64,7 +64,7 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://bite-wcsg.onrender.com/auth/register', { username, password });
+      await axios.post('http://localhost:3001/auth/register', { username, password });
       enqueueSnackbar("Registration completed, you can login now , Enjoy",{variant:"success"})
       setTimeout(()=>{window.location.reload()} , 2000)
       
