@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router-dom'
     setIsLoading(true)
     const fetchRecipe= async ()=>{
     try{ 
-      const response=await axios.get("http://localhost:3001/recipes")
+      const response=await axios.get("https://bite-wcsg.onrender.com/recipes")
       setRecipes(response.data)
       console.log(response.data);
       setIsLoading(false)
@@ -34,7 +34,7 @@ import { useNavigate } from 'react-router-dom'
     const fetchSavedRecipe = async ()=>{
       try{ 
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          `https://bite-wcsg.onrender.com/recipes/savedRecipes/ids/${userID}`
         )
         setSavedRecipes(response.data.savedRecipes)
 
@@ -50,7 +50,7 @@ import { useNavigate } from 'react-router-dom'
 
 const saveRecipe = async (recipeID)=>{
   try{ 
-    const response= await axios.put("http://localhost:3001/recipes",
+    const response= await axios.put("https://bite-wcsg.onrender.com/recipes",
       {recipeID,
         userID},
       {headers:{Authorization:cookies.access_token}})
