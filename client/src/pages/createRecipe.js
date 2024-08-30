@@ -40,7 +40,7 @@ const CreateRecipe = () => {
   const onSubmit=async(e)=>{
     e.preventDefault()
     try{
-      await axios.post("https://bite-wcsg.onrender.com/recipes",recipe,{headers:{Authorization:cookies.access_token}})
+      await axios.post("http://localhost:3001/recipes",recipe,{headers:{Authorization:cookies.access_token}})
       navigate("/")
       enqueueSnackbar("Recipe Created successfully",{variant:"success"})
     } catch (err) {
