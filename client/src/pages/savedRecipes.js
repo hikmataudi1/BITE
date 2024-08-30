@@ -14,7 +14,7 @@ const SavedRecipes = () => {
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
-          `https://bite-wcsg.onrender.com/recipes/savedRecipes/${userID}`
+          `http://localhost:3001/recipes/savedRecipes/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
         setIsLoading(false)
